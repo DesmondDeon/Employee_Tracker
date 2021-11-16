@@ -78,7 +78,7 @@ const updateEmployeeRecord = [
   {
     type: 'input',
     name: 'role_id',
-    message: 'What new role would you like for your employee? Please only type the number of the "id" of the role! (i.e. "4")'
+    message: 'Please select an ID that represents the employee role'
   },
 ]
 
@@ -170,8 +170,8 @@ const startHCM = async() => {
 
       case "view all departments":
         db.query('SELECT * FROM department', function (err, results) {
-          console.log("");
-          console.log('Your NEW department has been added');
+          console.log("Your New department has been added");
+          console.table(results);
           startHCM();
         });
         break;
